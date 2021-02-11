@@ -58,5 +58,5 @@ Frameworks
 (step-by-step explanation of a user’s experience, example scenario). TBD
 
 ### Team Members
-[Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailtop:gacopley@crimson.ua.edu)
+[Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailto:gacopley@crimson.ua.edu)
 
