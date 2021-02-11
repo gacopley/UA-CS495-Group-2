@@ -1,4 +1,6 @@
-# CS495 Project: Something with OpenBCI
+<p align = "center">
+CS495 Capstone Project: Something with OpenBCI
+</p>
 ### Goals
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
 
