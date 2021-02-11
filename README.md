@@ -1,4 +1,4 @@
-<p align = "center" style="font-size:300%;">
+<p align = "center" style="font-size:48pt">
 CS495 Capstone Project: Something with OpenBCI
 </p>
 
