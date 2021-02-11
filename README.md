@@ -45,21 +45,18 @@ Want to google something? Click [here](https://google.com/)!
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
 
 ### Approach
-
-	Tools
-        - Electron-JS
+Tools
+    - Electron-JS
 	
-    APIs
-        -
+APIs
+    -
 
-    Frameworks
-		- React(?)
+Frameworks
+	- React(?)
 
 ### Experience Description
-
-	(step-by-step explanation of a user’s experience, example scenario). TBD
+(step-by-step explanation of a user’s experience, example scenario). TBD
 
 ### Team Members
-
-	[Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailtop:gacopley@crimson.ua.edu)
+[Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailtop:gacopley@crimson.ua.edu)
 
