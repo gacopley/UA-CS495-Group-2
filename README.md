@@ -45,13 +45,13 @@ Want to google something? Click [here](https://google.com/)!
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
 
 ### Approach
-Tools
+#### Tools
     - Electron-JS
 	
-APIs
+#### APIs
     -
 
-Frameworks
+#### Frameworks
 	- React(?)
 
 ### Experience Description
