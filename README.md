@@ -1,4 +1,4 @@
-## Goals
+### Goals
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
 
 ### Approach
