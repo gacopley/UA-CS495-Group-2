@@ -1,6 +1,6 @@
-<p align = "center" style="font-size:48pt">
+<h1 align = "center">
 CS495 Capstone Project: Something with OpenBCI
-</p>
+</h1>
 
 ### Goals
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
