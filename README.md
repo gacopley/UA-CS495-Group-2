@@ -2,10 +2,10 @@
 CS495 Capstone Project: Something with OpenBCI
 </h1>
 
-### Goals
+## Goals
 Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
 
-### Approach
+## Approach
    Tools
       - Electron-JS
 	
@@ -15,8 +15,8 @@ Our team will be building a desktop app the processes EEG/EMG data and provides 
    Frameworks
 	  - React(?)
 
-### Experience Description
+## Experience Description
 (step-by-step explanation of a user’s experience, example scenario). TBD
 
-### Team Members
+## Team Members
 [Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailto:gacopley@crimson.ua.edu)
