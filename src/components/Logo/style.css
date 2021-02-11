@@ -1,0 +1,13 @@
+.logo a{
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;  
+}
+
+.logo{
+    text-align: center;
+
+}
