@@ -6,9 +6,9 @@ CS495 Capstone Project: Getting Useable data from Ganglion to Android
 Our team will be building an android app that gets EEG/EMG data from the Ganglion Board and provides processed data to users.
 
 ## Approach
-   Tools
-      - Android Studio
-      - OpenBCI GUI
+   Tools <br>
+      - Android Studio <br>
+      - OpenBCI GUI <br>
 	
    APIs
       -
