@@ -1,13 +1,14 @@
 <h1 align = "center">
-CS495 Capstone Project: Something with OpenBCI
+CS495 Capstone Project: Getting Useable data from Ganglion to Android
 </h1>
 
 ## Goals
-Our team will be building a desktop app the processes EEG/EMG data and provides feedback to users based on the processed data.
+Our team will be building an android app that gets EEG/EMG data from the Ganglion Board and provides processed data to users.
 
 ## Approach
    Tools
-      - Electron-JS
+      - Android Studio
+      - OpenBCI GUI
 	
    APIs
       -
