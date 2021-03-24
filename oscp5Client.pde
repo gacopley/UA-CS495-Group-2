@@ -3,6 +3,7 @@
  * an osc broadcast client.
  * an example for broadcast server is located in the oscP5broadcaster exmaple.
  * oscP5 website at http://www.sojamo.de/oscP5
+ * Minor alterations to this code committed by Eian Landis.
  */
 
 import oscP5.*;
@@ -19,7 +20,8 @@ void setup() {
   frameRate(25);
   
   /* create a new instance of oscP5. 
-   * 12000 is the port number you are listening for incoming osc messages.
+   * 7000 is the port number you are listening for incoming osc messages.
+   * Edited by Eian Landis to account for different port used by the OpenBCI GUI.
    */
   oscP5 = new OscP5(this,7000);
   
@@ -27,7 +29,9 @@ void setup() {
    * with the oscP5.send method.
    */
   
-  /* the address of the osc broadcast server */
+  /* the address of the osc broadcast server 
+   * Also edited by Eian Landis, due to the need for correct broadcast server address in conjunction with the OpenBCI GUI.
+   */
   myBroadcastLocation = new NetAddress("127.0.0.1",32000);
 }
 
