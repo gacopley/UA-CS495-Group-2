@@ -16,6 +16,7 @@ Our team will be building an android app that gets EEG/EMG data from the Ganglio
 
    Frameworks <br>
       -Java <br>
+      -React <br>
 
 ## Experience Description
 (step-by-step explanation of a user’s experience, example scenario). Full explanation pending upon project completion.
