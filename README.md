@@ -23,15 +23,15 @@ Our team will be building an android app that gets EEG/EMG data from the Ganglio
 
 ## Unit Tests, Sprint 2
 For Sprint 2, five unit tests were devised:
+   
+   Testing to Ensure Connection is Successful <br>
+   -This would involve adding a check to ensure the connection does not fail mid-data transfer, and including a means of alerting the user to this occurring.
 
    Sending/Receiving Data Over OSC <br>
    -This refers to the sending of data from the OpenBCI GUI to a separate source, the first step of sending it to Android. This is implemented by oscp5Client.pde. <br>
     
    Streaming Data Over OSC <br>
    -This refers to the next step of sending data. Rather than sending one piece of data, the data is now to be continuously streamed over a time period. This is also implemented by oscp5Client.pde.
-   
-   Testing to Ensure Connection is Successful <br>
-   -This would involve adding a check to ensure the connection does not fail mid-data transfer, and including a means of alerting the user to this occurring.
    
    Testing Null Input <br>
    -This would be testing to see the result of no input, intending to generate a different response than no connection.
