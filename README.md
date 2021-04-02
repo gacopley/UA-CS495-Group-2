@@ -22,22 +22,22 @@ Our team will be building an android app that gets EEG/EMG data from the Ganglio
 (step-by-step explanation of a user’s experience, example scenario). Full explanation pending upon project completion.
 
 ## Unit Tests, Sprint 2
-For Sprint 2, five unit tests were devised:
+For Sprint 2, five unit tests were devised. They were executed by Blayde Dill successfully in Apache Netbeans, though any compiler for Java theoretically would work. All that is required in set-up is to ensure that the OpenBCI GUI is running and is streaming data via UDP utilizing localhost. The following are descriptions of the five tests, found in Java/osc/src/test/java.
    
-   Testing to Ensure Connection is Successful <br>
-   -This would involve adding a check to ensure the connection does not fail mid-data transfer, and including a means of alerting the user to this occurring.
+   Connection Established <br>
+   -This unit test checks to see if the UDP connection between the GUI and the Java program was successful. <br>
 
-   Sending/Receiving Data Over OSC <br>
-   -This refers to the sending of data from the OpenBCI GUI to a separate source, the first step of sending it to Android. This is implemented by oscp5Client.pde. <br>
+   Disconnect <br>
+   -This unit test checks to see if it is possible to disconnect from the data stream at will. <br>
     
-   Streaming Data Over OSC <br>
-   -This refers to the next step of sending data. Rather than sending one piece of data, the data is now to be continuously streamed over a time period. This is also implemented by oscp5Client.pde.
+   IP <br>
+   -This unit test checks to see if the connection is utilizing the system's localhost. <br>
    
-   Testing Null Input <br>
-   -This would be testing to see the result of no input, intending to generate a different response than no connection.
+   Port <br>
+   -This unit test checks to see if the connection is utilizing the correct local port. <br>
    
-   Testing Invalid Input <br>
-   -This would be testing to see the result of an incorrectly entered or invalid input, again generating a different error result.
-
+   Receive <br>
+   -This unit test, requiring that data is being streamed from OpenBCI's GUI, checks whether or not data is being sent from the GUI and received by the program.
+   
 ## Team Members
 [Pavan Kurkal](mailto:pkurkal@crimson.ua.edu), [Eian Landis](mailto:ellandis@crimson.ua.edu), [Blayde Dill](mailto:badill@crimson.ua.edu), and [Alex Copley](mailto:gacopley@crimson.ua.edu)
