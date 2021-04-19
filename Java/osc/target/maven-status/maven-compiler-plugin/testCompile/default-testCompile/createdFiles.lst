@@ -1,5 +1,5 @@
 TestIP.class
-TestTimeout.class
 TestReceive.class
+TestDisconnect.class
 TestConnectionEstablished.class
 TestPort.class
