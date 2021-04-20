@@ -13,10 +13,11 @@ Our team will be building an android app that gets EEG/EMG data from either a Ga
 	
    APIs <br>
       -UDP (User Datagram Protocol) <br>
+      -DataGramSocket (Built into Java) <br>
+      -MPAndroidChart (PhilJay) <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart GitHub</a><br>
 
-   Frameworks <br>
+   Languages <br>
       -Java <br>
-      -React <br>
 
 ## Experience Description
 For a user of the OpenBCI GUI, the steps to transfer the information from the GUI to the app are relatively simple. First, the user would need to have open the GUI with whatever EEG data a user is seeking, utilize the networking feature to transmit the data using UDP, targetting the android phone's IP address, or, if using an emulator, the localhost address.
