@@ -53,8 +53,8 @@ public class Main {
             ds.receive(DpReceive);
             System.out.println(ds.getLocalPort()+"  "+ds.getLocalSocketAddress().toString());
             String s1 = data(receive).toString();
-            System.out.println(s1.replace("[", "").split(":")[2].split(",")[0]);
-            //float val = Float.parseFloat(s1.split("[")[2].split(",")[0]);
+            System.out.println();
+            float val = Float.parseFloat(s1.replace("[", "").split(":")[2].split(",")[0]);
             
             
   

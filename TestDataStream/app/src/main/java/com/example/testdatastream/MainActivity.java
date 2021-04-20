@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -24,15 +25,23 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements
         OnChartValueSelectedListener {
     private LineChart chart;
+    Random rand;
+    float maxY = 300;
+    int count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+         rand = new Random();
+
+
         chart = findViewById(R.id.chart1);
         chart.setOnChartValueSelectedListener(this);
 
@@ -50,31 +59,29 @@ public class MainActivity extends AppCompatActivity implements
         // if disabled, scaling can be done on x- and y-axis separately
         chart.setPinchZoom(true);
 
+        chart.setVisibleYRangeMaximum(10, YAxis.AxisDependency.LEFT);
+
         // set an alternative background color
-        chart.setBackgroundColor(Color.LTGRAY);
+        chart.setBackgroundColor(Color.WHITE);
 
         LineData data = new LineData();
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(Color.BLACK);
 
         // add empty data
         chart.setData(data);
 
         // get the legend (only possible after setting data)
-        Legend l = chart.getLegend();
-
-        // modify the legend ...
-        l.setForm(Legend.LegendForm.LINE);
-        l.setTextColor(Color.WHITE);
+        chart.getLegend().setEnabled(false);
 
         XAxis xl = chart.getXAxis();
-        xl.setTextColor(Color.WHITE);
+        xl.setTextColor(Color.BLACK);
         xl.setDrawGridLines(false);
         xl.setAvoidFirstLastClipping(true);
         xl.setEnabled(true);
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setTextColor(Color.WHITE);
-        leftAxis.setAxisMaximum(100f);
+        leftAxis.setTextColor(Color.BLACK);
+        leftAxis.setAxisMaximum(150f);
         leftAxis.setAxisMinimum(0f);
         leftAxis.setDrawGridLines(true);
 
@@ -82,21 +89,38 @@ public class MainActivity extends AppCompatActivity implements
         rightAxis.setEnabled(false);
     }
 
-    private void addEntry(float val) {
+    private void addEntry(String[] vals) {
 
         LineData data = chart.getData();
 
         if (data != null) {
-
-            ILineDataSet set = data.getDataSetByIndex(0);
-            // set.addEntry(...); // can be called as well
-
-            if (set == null) {
-                set = createSet();
-                data.addDataSet(set);
+            if(count>120){
+                maxY = 300;
             }
+            else count++;
+            for(int i = 0; i<5; i++) {
+                LineDataSet set = (LineDataSet) data.getDataSetByIndex(i);
+                // set.addEntry(...); // can be called as well
 
-            data.addEntry(new Entry(set.getEntryCount(), val), 0);
+                if (set == null) {
+                   set = createSet(i);
+                   data.addDataSet(set);
+                }
+                float val = Float.parseFloat(vals[i]);
+                if(set.getEntryCount()>120){
+                    try {
+                        for (int x = set.getEntryCount() - 120; x < set.getEntryCount(); x++) {
+                            maxY = Math.max(set.getEntryForIndex(x).getY(), maxY);
+                        }
+                    }catch(Exception e){}
+                }
+                else maxY = Math.max(maxY, val);
+              data.addEntry(new Entry(set.getEntryCount(),val) , i);
+            }
+            YAxis leftAxis = chart.getAxisLeft();
+            leftAxis.setTextColor(Color.BLACK);
+            leftAxis.setAxisMaximum(maxY);
+            //leftAxis.setSpaceTop(0);
             data.notifyDataChanged();
 
             // let the chart know it's data has changed
@@ -104,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements
 
             // limit the number of visible entries
             chart.setVisibleXRangeMaximum(120);
+
             // chart.setVisibleYRange(30, AxisDependency.LEFT);
 
             // move to the latest entry
@@ -115,18 +140,38 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-    private LineDataSet createSet() {
+    private LineDataSet createSet(int num) {
 
-        LineDataSet set = new LineDataSet(null, "Dynamic Data");
+        LineDataSet set = new LineDataSet(null, "Bandpower - Channel "+num);
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
-        set.setColor(ColorTemplate.getHoloBlue());
-        set.setCircleColor(Color.WHITE);
+        int c = Color.rgb(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+        set.setColor(c);
+        if(num==0){
+            TextView textElement = (TextView) findViewById(R.id.ptDelta);
+            textElement.setTextColor(c);
+        }
+        if(num==1){
+            TextView textElement = (TextView) findViewById(R.id.ptTheta);
+            textElement.setTextColor(c);
+        }
+        if(num==2){
+            TextView textElement = (TextView) findViewById(R.id.ptAlpha);
+            textElement.setTextColor(c);
+        }
+        if(num==3){
+            TextView textElement = (TextView) findViewById(R.id.ptBeta);
+            textElement.setTextColor(c);
+        }
+        if(num==4){
+            TextView textElement = (TextView) findViewById(R.id.ptGamma);
+            textElement.setTextColor(c);
+        }
+        set.setCircleColor(c);
         set.setLineWidth(2f);
-        set.setCircleRadius(4f);
         set.setFillAlpha(65);
-        set.setFillColor(ColorTemplate.getHoloBlue());
-        set.setHighLightColor(Color.rgb(244, 117, 117));
-        set.setValueTextColor(Color.WHITE);
+        set.setFillColor(c);
+        set.setHighLightColor(c);
+        set.setValueTextColor(c);
         set.setValueTextSize(9f);
         set.setDrawValues(false);
         return set;
@@ -166,9 +211,11 @@ public class MainActivity extends AppCompatActivity implements
                         e.printStackTrace();
                     }
                     String s1 = data(receive).toString();
-                        float val = Float.parseFloat(s1.replace("[", "").split(":")[2].split(",")[1]);
+                    String[] ss = s1.replace("[", "").replace("]", "").replace("}", "").replace("\r\n", "").split(":")[2].split(",");
+                        //float val = Float.parseFloat(s1.replace("[", "").split(":")[2].split(",")[1]);
+                        //float val1 = Float.parseFloat(s1.replace("[", "").split(":")[2].split(",")[2]);
                         //System.out.println(val);
-                        addEntry(val);
+                        addEntry(ss);
                     }
                     catch(Exception ex){}
                 }
