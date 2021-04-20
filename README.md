@@ -43,7 +43,7 @@ For Sprint 2, five unit tests were devised. They were executed by Blayde Dill su
    -This unit test, requiring that data is being streamed from OpenBCI's GUI, checks whether or not data is being sent from the GUI and received by the program.
    
 ## Sprint 3 Video
-[link to video] 
+A video demonstration of the app can be viewed here: <https://drive.google.com/file/d/11Wkjz5a8iZpudOZvXtUxKFQU2fb9m_Gm/view?usp=sharing>
 
 ## GitHub Repository
 The repository can be accessed here: <https://github.com/gacopley/UA-CS495-Group-2>
